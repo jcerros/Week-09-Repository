@@ -41,7 +41,6 @@ public class tictactoe {
 					else
 						cell2 = "X";
 					bInvalidMove = false;
-					
 
 				} else if (susermove.equalsIgnoreCase("3")) {
 
@@ -107,6 +106,111 @@ public class tictactoe {
 				}
 
 			} while (bInvalidMove);
+			// scomputernum
+
+			do {
+				int computerNum = 0;
+
+				computerNum = 1 + (int) (Math.random() * 9);
+
+				if (computerNum == 1) {
+
+					if (cell1.equalsIgnoreCase("1")) {
+						cell1 = "O";
+						bInvalidMove = false;
+					} else
+						bInvalidMove = true;
+
+				}
+
+				else if (computerNum == 2) {
+
+					if (!cell2.equalsIgnoreCase("2"))
+						bInvalidMove = true;
+					else {
+						cell2 = "O";
+						bInvalidMove = false;
+					}
+				}
+
+				else if (computerNum == 3) {
+
+					if (!cell3.equalsIgnoreCase("3"))
+						bInvalidMove = true;
+					else {
+						cell3 = "O";
+						bInvalidMove = false;
+					}
+
+				}
+
+				else if (computerNum == 4) {
+
+					if (!cell4.equalsIgnoreCase("4"))
+						bInvalidMove = true;
+					else {
+						cell4 = "O";
+						bInvalidMove = false;
+					}
+
+				}
+
+				else if (computerNum == 5) {
+
+					if (!cell5.equalsIgnoreCase("5"))
+						bInvalidMove = true;
+					else {
+						cell5 = "O";
+						bInvalidMove = false;
+					}
+
+				}
+
+				else if (computerNum == 6) {
+
+					if (!cell6.equalsIgnoreCase("6"))
+						bInvalidMove = true;
+					else {
+						cell6 = "O";
+						bInvalidMove = false;
+					}
+
+				}
+
+				else if (computerNum == 7) {
+
+					if (!cell7.equalsIgnoreCase("7"))
+						bInvalidMove = true;
+					else {
+						cell7 = "O";
+						bInvalidMove = false;
+					}
+
+				}
+
+				else if (computerNum == 8) {
+
+					if (!cell8.equalsIgnoreCase("8"))
+						bInvalidMove = true;
+					else {
+						cell8 = "O";
+						bInvalidMove = false;
+					}
+
+				}
+
+				else if (computerNum == 9) {
+
+					if (!cell9.equalsIgnoreCase("9"))
+						bInvalidMove = true;
+					else {
+						cell9 = "O";
+						bInvalidMove = false;
+					}
+				}
+			} while (bInvalidMove);
+
+			// end of computer move
 
 			// JOptionPane.showMessageDialog(null,sBoard);
 			// sBoard = "process: a)validate input";
@@ -130,6 +234,6 @@ public class tictactoe {
 					&& !cell8.equals("8") && !cell9.equals("9"))
 				bPlaying = false;
 		} while (bPlaying);
-
 	}
+
 }
