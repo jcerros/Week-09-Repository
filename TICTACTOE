@@ -1,17 +1,17 @@
 import javax.swing.JOptionPane;
 
-public class tictactoe {
+public class TICTACTOE {
 	public static void main(String args[]) {
-		boolean bPlaying = true;
+		boolean Playing = true;
 
 		String sBoard = "";
 		String cell1 = "1", cell2 = "2", cell3 = "3", cell4 = "4", cell5 = "5", cell6 = "6", cell7 = "7", cell8 = "8", cell9 = "9";
 		String susermove;
-		boolean bInvalidMove = true;
+		boolean InvalidMove = true;
 
 		// loop till game is over
 		do {
-			bInvalidMove = true;
+			InvalidMove = true;
 			// loop till valid move
 			do {
 				sBoard = cell1 + "|" + cell2 + "|" + cell3 + "\n";
@@ -26,86 +26,116 @@ public class tictactoe {
 
 					if (cell1.equalsIgnoreCase("1")) {
 						cell1 = "X";
-						bInvalidMove = false;
-					} else
+						InvalidMove = false;
+					} else {
 						JOptionPane.showMessageDialog(null,
 								"INVALID!\nSelect Different Move");
+						InvalidMove = true;
+					}
 
-				}
+				} else if (susermove.equalsIgnoreCase("2")) {
 
-				else if (susermove.equalsIgnoreCase("2")) {
-
-					if (!cell2.equalsIgnoreCase("2"))
-						JOptionPane.showMessageDialog(null,
-								"INVALID!\nSelect Different Move");
-					else
+					if (cell2.equalsIgnoreCase("2")) {
 						cell2 = "X";
-					bInvalidMove = false;
-
+						InvalidMove = false;
+					} else {
+						JOptionPane.showMessageDialog(null,
+								"INVALID!\nSelect Different Move");
+						InvalidMove = true;
+					}
 				} else if (susermove.equalsIgnoreCase("3")) {
 
-					if (!cell3.equalsIgnoreCase("3"))
+					if (cell3.equalsIgnoreCase("3")) {
+						cell3 = "X";
+						InvalidMove = false;
+					} else {
 						JOptionPane.showMessageDialog(null,
 								"INVALID!\nSelect Different Move");
-					else
-						cell3 = "X";
-					bInvalidMove = false;
+						InvalidMove = true;
+					}
 
 				} else if (susermove.equalsIgnoreCase("4")) {
 
-					if (!cell4.equalsIgnoreCase("4"))
-						JOptionPane.showMessageDialog(null,
-								"INVALID!\nSelect Different Move");
-					else
+					if (cell4.equalsIgnoreCase("4")) {
 						cell4 = "X";
-					bInvalidMove = false;
+						InvalidMove = false;
+					} else {
+						JOptionPane.showMessageDialog(null,
+								"INVALID!\nSelect Different Move");
+						InvalidMove = true;
+					}
+
 				} else if (susermove.equalsIgnoreCase("5")) {
-					if (!cell5.equalsIgnoreCase("5"))
-						JOptionPane.showMessageDialog(null,
-								"INVALID!\nSelect Different Move");
-					else
+					if (cell5.equalsIgnoreCase("5")) {
 						cell5 = "X";
-					bInvalidMove = false;
-				}
-
-				else if (susermove.equalsIgnoreCase("6")) {
-					if (!cell6.equalsIgnoreCase("6"))
+						InvalidMove = false;
+					} else {
 						JOptionPane.showMessageDialog(null,
 								"INVALID!\nSelect Different Move");
-					else
+						InvalidMove = true;
+					}
+
+				} else if (susermove.equalsIgnoreCase("6")) {
+					if (cell6.equalsIgnoreCase("6")) {
 						cell6 = "X";
-					bInvalidMove = false;
-				}
-
-				else if (susermove.equalsIgnoreCase("7")) {
-
-					if (!cell7.equalsIgnoreCase("7"))
+						InvalidMove = false;
+					} else {
 						JOptionPane.showMessageDialog(null,
 								"INVALID!\nSelect Different Move");
-					else
+						InvalidMove = true;
+					}
+
+				} else if (susermove.equalsIgnoreCase("7")) {
+
+					if (cell7.equalsIgnoreCase("7")) {
 						cell7 = "X";
-					bInvalidMove = false;
+						InvalidMove = false;
+					} else {
+						JOptionPane.showMessageDialog(null,
+								"INVALID!\nSelect Different Move");
+						InvalidMove = true;
+					}
 
 				} else if (susermove.equalsIgnoreCase("8")) {
 
-					if (!cell8.equalsIgnoreCase("8"))
-						JOptionPane.showMessageDialog(null,
-								"INVALID!\nSelect Different Move");
-					else
+					if (cell8.equalsIgnoreCase("8")) {
 						cell8 = "X";
-					bInvalidMove = false;
-				}
-				if (susermove.equalsIgnoreCase("9")) {
-					if (!cell9.equalsIgnoreCase("9"))
+						InvalidMove = false;
+					} else {
 						JOptionPane.showMessageDialog(null,
 								"INVALID!\nSelect Different Move");
-					else
+						InvalidMove = true;
+					}
+				} else if (susermove.equalsIgnoreCase("9")) {
+					if (cell9.equalsIgnoreCase("9"))
 						cell9 = "X";
-					bInvalidMove = false;
-
+					InvalidMove = false;
+				} else {
+					JOptionPane.showMessageDialog(null,
+							"INVALID!\nSelect Different Move");
+					InvalidMove = true;
 				}
 
-			} while (bInvalidMove);
+			} while
+
+			(InvalidMove);{
+			if ((cell1.equals("X") && cell2.equals("X") && cell3.equals("X"))
+					|| (cell4.equals("X") && cell5.equals("X")
+					&& cell6.equals("X")) || (cell7.equals("X")
+					&& cell8.equals("X") && cell9.equals("X"))
+					|| (cell1.equals("X") && cell4.equals("X")
+					&& cell7.equals("X")) ||(cell2.equals("X")
+					&& cell5.equals("X") && cell8.equals("X"))
+					|| (cell3.equals("X") && cell6.equals("X")
+					&& cell9.equals("X"))||( cell1.equals("X")
+					&& cell5.equals("X") && cell9.equals("X") )|| (cell3
+					.equals("X") && cell5.equals("X") && cell7.equals("X"))){
+
+				JOptionPane.showMessageDialog(null, "You Win!!!", "winner!!!!",
+						JOptionPane.PLAIN_MESSAGE);
+				Playing = false;
+}
+			}
 			// scomputernum
 
 			do {
@@ -117,123 +147,131 @@ public class tictactoe {
 
 					if (cell1.equalsIgnoreCase("1")) {
 						cell1 = "O";
-						bInvalidMove = false;
-					} else
-						bInvalidMove = true;
+						InvalidMove = false;
+					} else {
+						InvalidMove = true;
+					}
+				} else if (computerNum == 2) {
 
-				}
-
-				else if (computerNum == 2) {
-
-					if (!cell2.equalsIgnoreCase("2"))
-						bInvalidMove = true;
-					else {
+					if (cell2.equalsIgnoreCase("2")) {
 						cell2 = "O";
-						bInvalidMove = false;
-					}
-				}
+						InvalidMove = false;
+					} else
+						InvalidMove = true;
 
-				else if (computerNum == 3) {
+				} else if (computerNum == 3) {
 
-					if (!cell3.equalsIgnoreCase("3"))
-						bInvalidMove = true;
-					else {
+					if (cell3.equalsIgnoreCase("3")) {
 						cell3 = "O";
-						bInvalidMove = false;
-					}
+						InvalidMove = false;
+					} else {
 
+						InvalidMove = true;
+					}
 				}
 
 				else if (computerNum == 4) {
 
-					if (!cell4.equalsIgnoreCase("4"))
-						bInvalidMove = true;
-					else {
+					if (cell4.equalsIgnoreCase("4")) {
 						cell4 = "O";
-						bInvalidMove = false;
+						InvalidMove = false;
+					} else {
+						InvalidMove = true;
 					}
 
 				}
 
 				else if (computerNum == 5) {
 
-					if (!cell5.equalsIgnoreCase("5"))
-						bInvalidMove = true;
-					else {
+					if (cell5.equalsIgnoreCase("5")) {
 						cell5 = "O";
-						bInvalidMove = false;
+						InvalidMove = false;
+					} else {
+						InvalidMove = true;
 					}
 
 				}
 
 				else if (computerNum == 6) {
 
-					if (!cell6.equalsIgnoreCase("6"))
-						bInvalidMove = true;
-					else {
+					if (cell6.equalsIgnoreCase("6")) {
 						cell6 = "O";
-						bInvalidMove = false;
+						InvalidMove = false;
+					} else {
+
+						InvalidMove = true;
 					}
 
 				}
 
 				else if (computerNum == 7) {
 
-					if (!cell7.equalsIgnoreCase("7"))
-						bInvalidMove = true;
-					else {
+					if (cell7.equalsIgnoreCase("7")) {
 						cell7 = "O";
-						bInvalidMove = false;
+						InvalidMove = false;
+					} else {
+
+						InvalidMove = true;
 					}
 
 				}
 
 				else if (computerNum == 8) {
 
-					if (!cell8.equalsIgnoreCase("8"))
-						bInvalidMove = true;
-					else {
+					if (cell8.equalsIgnoreCase("8")) {
 						cell8 = "O";
-						bInvalidMove = false;
+						InvalidMove = false;
+					} else {
+						InvalidMove = true;
 					}
 
 				}
 
 				else if (computerNum == 9) {
 
-					if (!cell9.equalsIgnoreCase("9"))
-						bInvalidMove = true;
-					else {
+					if (cell9.equalsIgnoreCase("9")) {
 						cell9 = "O";
-						bInvalidMove = false;
+						InvalidMove = false;
+					} else {
+						InvalidMove = true;
 					}
 				}
-			} while (bInvalidMove);
-
-			// end of computer move
-
-			// JOptionPane.showMessageDialog(null,sBoard);
-			// sBoard = "process: a)validate input";
-			// JOptionPane.showMessageDialog(null,sBoard);
-			// sBoard = "process b)validate available slot";
-			// JOptionPane.showMessageDialog(null,sBoard);
-			// sBoard = "rebuild board";
-			// JOptionPane.showMessageDialog(null,sBoard);
-			// sBoard = "check winner";
-			// JOptionPane.showMessageDialog(null,sBoard);
-			// sBoard = "generate system move a)1-9";
-			// JOptionPane.showMessageDialog(null,sBoard);
-			// sBoard = "processing validate available slot";
-			// JOptionPane.showMessageDialog(null,sBoard);
-			// sBoard = "check winner";
-			// JOptionPane.showMessageDialog(null,sBoard);
+			} while (InvalidMove);{
+			if ((cell1.equals("O") && cell2.equals("O") && cell3.equals("O")
+					|| cell4.equals("O") && cell5.equals("O")
+					&& cell6.equals("O") || cell7.equals("O")
+					&& cell8.equals("O") && cell9.equals("O")
+					|| cell1.equals("O") && cell4.equals("O")
+					&& cell7.equals("O") || (cell2.equals("O")
+					&& cell5.equals("O") && cell8.equals("O")
+					|| cell3.equals("O") && cell6.equals("O")
+					&& cell9.equals("O") || cell1.equals("O")
+					&& cell5.equals("O") && cell9.equals("O") || cell3
+					.equals("O") && cell5.equals("O") && cell7.equals("O")))) {
+				JOptionPane.showMessageDialog(null, " you lose!!!", "loser!!",
+						JOptionPane.PLAIN_MESSAGE);
+				Playing = false;
+				}
+			}
+			
 
 			if (!cell1.equals("1") && !cell2.equals("2") && !cell3.equals("3")
 					&& !cell4.equals("4") && !cell5.equals("5")
 					&& !cell6.equals("6") && !cell7.equals("7")
-					&& !cell8.equals("8") && !cell9.equals("9"))
-				bPlaying = false;
-		} while (bPlaying);
+					&& !cell8.equals("8") && !cell9.equals("9")){
+				JOptionPane.showMessageDialog(null, "TIE!!!!", "Not bad",
+					JOptionPane.PLAIN_MESSAGE);
+			
+			}
+			
+		} while (Playing);
+		{
+			
+			JOptionPane.showMessageDialog(null, "Goodbye!!!!", "Thanks for playing",
+					JOptionPane.PLAIN_MESSAGE);
+			}
+		
+
 	}
 
 }
